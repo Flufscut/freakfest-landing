@@ -42,11 +42,102 @@
   50% { box-shadow: 0 0 40px rgba(0, 255, 0, 0.6); }
 }
 
+@keyframes text-explosion {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glitch-effect {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+}
+
+@keyframes explosive-entry {
+  0% { transform: scale(0.5) rotate(-5deg); opacity: 0; }
+  50% { transform: scale(1.1) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes diagonal-slide {
+  0% { transform: translateX(-100px) translateY(50px); opacity: 0; }
+  100% { transform: translateX(0) translateY(0); opacity: 1; }
+}
+
+@keyframes particle-burst {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes energy-wave {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes power-surge {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.6); }
+}
+
+@keyframes neon-beam {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
 .pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Neon effects */
+.text-explosion {
+  animation: text-explosion 1s ease-out forwards;
+}
+
+.glitch-effect {
+  animation: glitch-effect 0.3s ease-in-out infinite;
+}
+
+.explosive-entry {
+  animation: explosive-entry 0.8s ease-out forwards;
+}
+
+.diagonal-slide {
+  animation: diagonal-slide 0.6s ease-out forwards;
+}
+
+.particle-burst {
+  position: relative;
+}
+
+.particle-burst::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: rgba(0, 255, 0, 0.6);
+  border-radius: 50%;
+  animation: particle-burst 2s ease-out infinite;
+}
+
+.energy-wave {
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.3), transparent);
+  animation: energy-wave 3s ease-in-out infinite;
+}
+
+.power-surge {
+  animation: power-surge 1.5s ease-in-out infinite;
+}
+
+.neon-beam {
+  animation: neon-beam 2s ease-in-out infinite;
+}
+
+/* Neon text effects */
 .neon-text {
   text-shadow: 0 0 10px currentColor;
 }
@@ -72,3 +163,10 @@ html {
   outline: 2px solid hsl(var(--primary));
   outline-offset: 2px;
 }
+
+/* Animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
