@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DARK MODE THEME */
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 95%;
+  --border: 0 0% 18%;
+  
+  --card: 270 40% 15%;
+  --card-foreground: 0 0% 92%;
+  --card-border: 0 0% 25%;
+  
+  --primary: 120 100% 50%;
+  --primary-foreground: 0 0% 8%;
+  
+  --secondary: 270 40% 18%;
+  --secondary-foreground: 0 0% 82%;
+  
+  --muted: 270 40% 12%;
+  --muted-foreground: 0 0% 60%;
+  
+  --accent: 120 80% 15%;
+  --accent-foreground: 120 80% 80%;
+  
+  --destructive: 0 84% 35%;
+  --destructive-foreground: 0 84% 98%;
+  
+  --input: 0 0% 20%;
+  --ring: 120 100% 50%;
+  
+  --font-sans: Inter, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --font-display: Orbitron, sans-serif;
+}
+
+/* Custom animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 255, 0, 0.6); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Neon effects */
+.neon-text {
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Responsive typography */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
